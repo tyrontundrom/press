@@ -13,4 +13,4 @@
 
 *PATCH http://localhost:8080/article -> aktualizujemy artykuł*
 
-*DELETE http://localhost:8080/article/{id} -> usuwamy artykół o określonym ID*
+*DELETE http://localhost:8080/article/{id} -> usuwamy artykuł o określonym ID*
