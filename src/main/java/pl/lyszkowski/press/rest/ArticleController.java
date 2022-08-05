@@ -10,7 +10,6 @@ import pl.lyszkowski.press.service.ArticleService;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
