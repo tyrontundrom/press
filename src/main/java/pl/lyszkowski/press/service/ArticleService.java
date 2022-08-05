@@ -3,6 +3,8 @@ package pl.lyszkowski.press.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.lyszkowski.press.model.Article;
+import pl.lyszkowski.press.model.ArticleContent;
+import pl.lyszkowski.press.model.Author;
 import pl.lyszkowski.press.repository.ArticleRepository;
 
 import java.time.Instant;
@@ -32,10 +34,19 @@ public class ArticleService {
 
     public Article update(Article article) {
         Optional<Article> byId = articleRepository.findById(article.getId());
-        System.out.println("byId from service update: " + byId);
         Article editArticle = byId.get();
-        System.out.println("editArticle from service update: " + editArticle);
-        editArticle.setContent(article.getContent());
+        String contentTitle = article.getContent().getTitle();
+        String contentContent = article.getContent().getContent();
+        String firstName = article.getArticleAuthor().getFirstName();
+        String lastName = article.getArticleAuthor().getLastName();
+        ArticleContent content = editArticle.getContent();
+        Author author = editArticle.getArticleAuthor();
+        content.setContent(contentContent);
+        content.setTitle(contentTitle);
+        author.setFirstName(firstName);
+        author.setLastName(lastName);
+        editArticle.setContent(content);
+        editArticle.setArticleAuthor(author);
         editArticle.setNameMagazine(article.getNameMagazine());
         editArticle.setTimestamp(Instant.now());
         return articleRepository.save(editArticle);

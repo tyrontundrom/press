@@ -10,9 +10,7 @@ import javax.persistence.Embeddable;
 @ToString
 @Getter
 @Setter
-public class Author {
-    private String firstName;
-    private String lastName;
-
-
+public class ArticleContent {
+    private String title;
+    private String content;
 }

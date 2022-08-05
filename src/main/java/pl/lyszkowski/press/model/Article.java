@@ -5,10 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.util.Date;
@@ -22,10 +19,19 @@ public class Article {
     @Id
     @GeneratedValue
     private Long id;
-    private String content;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "title", column = @Column(name = "TITLE", length = 20)),
+            @AttributeOverride(name = "content", column = @Column(name = "CONTENT", length = 5000))
+    })
+    private ArticleContent content;
     private Date publicationDate;
     private String nameMagazine;
-//    @Embedded
-//    private Author articleAuthor;
+    @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "firstName", column = @Column(name = "FIRST_NAME", length = 20)),
+            @AttributeOverride(name = "lastName", column = @Column(name = "LAST_NAME", length = 20))
+    })
+    private Author articleAuthor;
     private Instant timestamp;
 }
