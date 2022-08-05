@@ -1,7 +1,7 @@
 # pressApi
 **RestApi dla artykułów prasowych**
 ***
-**aplikacja uruchamia sie na http://localhost:8080/article*
+**aplikacja uruchamia sie na http://localhost:8080/article**
 
 *POST http://localhost:8080/article -> tworzymy artykuł*
 
