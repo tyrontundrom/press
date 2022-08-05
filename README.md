@@ -1,7 +1,8 @@
 # pressApi
-**RestApi dla artykółów prasowych**
+**RestApi dla artykułów prasowych**
 ***
 *aplikacja uruchamia sie na http://localhost:8080/article*
+
 *POST http://localhost:8080/article -> tworzymy artykuł*
 *GET http://localhost:8080/article/{id} -> pobieramy artykuł o określonym ID*
 *GET http://localhost:8080/article/sortDate -> pobieramy listę artykułów posortowaną po dacie malejąco*
