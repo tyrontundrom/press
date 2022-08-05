@@ -9,7 +9,7 @@
 
 *GET http://localhost:8080/article/sortDate -> pobieramy listę artykułów posortowaną po dacie malejąco*
 
-*GET http://localhost:8080/article/search?keyWord={słowo kluczowe} -> pobieramy listę artykułów zawierających słowo kluczowe w tytule lub w treści*
+*GET http://localhost:8080/article/search?keyWord= {słowo kluczowe} -> pobieramy listę artykułów zawierających słowo kluczowe w tytule lub w treści*
 
 *PATCH http://localhost:8080/article -> aktualizujemy artykuł*
 
