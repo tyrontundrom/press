@@ -118,4 +118,5 @@ class ArticleEndpointsTests {
                 .andDo(MockMvcResultHandlers.print())
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
+
 }
